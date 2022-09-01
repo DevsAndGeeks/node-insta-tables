@@ -1,0 +1,17 @@
+{
+  "name": "poc-insta-tables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i",
+    "test:watch": "yarn test --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.0.1",
+    "sequelize": "^6.21.4",
+    "sqlite3": "^5.0.11"
+  }
+}
