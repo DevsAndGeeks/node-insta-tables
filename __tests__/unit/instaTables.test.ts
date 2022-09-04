@@ -1,20 +1,20 @@
-const { Sequelize, DataTypes } = require('sequelize');
-  const sequelize = new Sequelize('sqlite::memory:')
+import { Sequelize } from 'sequelize';
+import {instaTables} from '../../src/core/utils'
+const sequelize = new Sequelize('sqlite::memory:')
 
-const { instaTables } = require('./index')
 
 const Thing = sequelize.define('Thing', {
   name: {
-    type: DataTypes.STRING,
+    type: 'string',
     allowNull: false
   }
 });
 
 
-async function seedThings (names) {
+async function seedThings (names: string[]) {
   await Thing.sync({ force: true })
   return Promise.all(
-   names.map((name) => Thing.create({ name }))
+   names.map((name:string) => Thing.create({ name }))
   )
 }
 
